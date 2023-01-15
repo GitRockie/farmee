@@ -14,7 +14,7 @@ class MainFarmsPage extends StatelessWidget {
         Container(
           //Scrolling parameter goes here
           child: Container(
-            margin: const EdgeInsetsDirectional.only(top: 50, bottom: 15),
+            margin: const EdgeInsets.only(top: 45, bottom: 15),
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Column(
               children: [
@@ -27,10 +27,15 @@ class MainFarmsPage extends StatelessWidget {
                           text: 'Spain',
                           color: AppColors.mainColor,
                         ),
-                        SmallText(
-                          text: 'Mataró',
-                          color: Colors.black54,
-                        ),
+                        Row(
+                          children: [
+                            SmallText(
+                              text: 'Mataró',
+                              color: Colors.black54,
+                            ),
+                            const Icon(Icons.arrow_drop_down_rounded)
+                          ],
+                        )
                       ],
                     ),
                     Center(
