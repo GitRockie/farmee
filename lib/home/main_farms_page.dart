@@ -1,3 +1,4 @@
+import 'package:farmee_app/home/farms_page_body.dart';
 import 'package:farmee_app/utils/colors.dart';
 import 'package:farmee_app/widgets/big_text.dart';
 import 'package:farmee_app/widgets/small_text.dart';
@@ -56,7 +57,8 @@ class MainFarmsPage extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        const FarmsPageBody(),
       ],
     ));
   }
