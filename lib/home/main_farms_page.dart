@@ -1,4 +1,6 @@
 import 'package:farmee_app/utils/colors.dart';
+import 'package:farmee_app/widgets/big_text.dart';
+import 'package:farmee_app/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 
 class MainFarmsPage extends StatelessWidget {
@@ -20,9 +22,15 @@ class MainFarmsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
-                      children: const [
-                        Text('Country'),
-                        Text('City'),
+                      children: [
+                        BigText(
+                          text: 'Spain',
+                          color: AppColors.mainColor,
+                        ),
+                        SmallText(
+                          text: 'Mataró',
+                          color: Colors.black54,
+                        ),
                       ],
                     ),
                     Center(
