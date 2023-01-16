@@ -1,5 +1,6 @@
 import 'package:farmee_app/utils/colors.dart';
 import 'package:farmee_app/widgets/big_text.dart';
+import 'package:farmee_app/widgets/icon_and_text.dart';
 import 'package:farmee_app/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
+      //color: Colors.red,
       height: 320,
       child: PageView.builder(
           controller: pageController,
@@ -31,7 +32,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
       children: [
         Container(
             height: 220,
-            margin: const EdgeInsets.only(left: 5, right: 5),
+            margin: const EdgeInsets.only(left: 10, right: 10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 color: index.isEven
@@ -44,7 +45,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
           alignment: Alignment.bottomCenter,
           child: Container(
             height: 120,
-            margin: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
+            margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30), color: Colors.white),
             child: Container(
@@ -52,36 +53,77 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BigText(text: 'Rancho de Makiko'),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        BigText(
+                          text: 'Rancho de Makiko',
+                          size: 18,
+                        ),
+                        const IconAndText(
+                          icon: Icons.location_on,
+                          iconColor: Colors.blueAccent,
+                          text: '2.4 km',
+                        ),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 10),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Wrap(
+                          children: List.generate(
+                              5,
+                              (index) => const Icon(
+                                    Icons.star,
+                                    color: AppColors.mainColor,
+                                    size: 15,
+                                  )),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        SmallText(
+                          text: '4.8',
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        SmallText(
+                          text: '1234',
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        SmallText(text: 'comentarios')
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Wrap(
-                        children: List.generate(
-                            5,
-                            (index) => const Icon(
-                                  Icons.star,
-                                  color: AppColors.mainColor,
-                                  size: 15,
-                                )),
+                    children: const [
+                      IconAndText(
+                        icon: Icons.compost,
+                        iconColor: AppColors.iconColor2,
+                        text: 'Tierra de oja',
                       ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      SmallText(
-                        text: '4.8',
-                      ),
-                      const SizedBox(
+                      SizedBox(
                         width: 5,
                       ),
-                      SmallText(
-                        text: '1234',
+                      SizedBox(
+                        width: 15,
                       ),
-                      const SizedBox(
-                        width: 5,
+                      IconAndText(
+                        icon: Icons.dashboard,
+                        iconColor: AppColors.mainColor,
+                        text: '2.4 m2',
                       ),
-                      SmallText(text: 'comentarios')
                     ],
                   )
                 ],
