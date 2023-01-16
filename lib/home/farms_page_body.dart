@@ -86,13 +86,50 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage('assets/images/huerto1.png')))),
+          GestureDetector(
+            onTap: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                  child: const IconAndText(
+                    icon: Icons.location_on,
+                    iconColor: AppColors.yellowColor,
+                    text: '2.4 km',
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                  child: const IconAndText(
+                    icon: Icons.favorite_outlined,
+                    iconColor: Colors.white,
+                    text: '',
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: 120,
               margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Colors.white),
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color(0xFFe8e8e8),
+                        blurRadius: 5,
+                        offset: Offset(0, 5)),
+                    BoxShadow(color: Colors.white, offset: Offset(-5, 0)),
+                    BoxShadow(color: Colors.white, offset: Offset(5, 0)),
+                  ]),
               child: Container(
                 padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
                 child: Column(
@@ -103,13 +140,8 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                       child: Row(
                         children: [
                           BigText(
-                            text: 'Rancho de Makiko',
+                            text: 'Yasaihata Makiko まきこ',
                             size: 18,
-                          ),
-                          const IconAndText(
-                            icon: Icons.location_on,
-                            iconColor: Colors.blueAccent,
-                            text: '2.4 km',
                           ),
                         ],
                       ),
@@ -139,7 +171,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                             width: 5,
                           ),
                           SmallText(
-                            text: '1234',
+                            text: '123',
                           ),
                           const SizedBox(
                             width: 5,
@@ -151,25 +183,28 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      children: const [
-                        IconAndText(
-                          icon: Icons.compost,
-                          iconColor: AppColors.iconColor2,
-                          text: 'Tierra de oja',
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        IconAndText(
-                          icon: Icons.dashboard,
-                          iconColor: AppColors.mainColor,
-                          text: '2.4 m2',
-                        ),
-                      ],
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: const [
+                          IconAndText(
+                            icon: Icons.compost,
+                            iconColor: AppColors.iconColor2,
+                            text: 'Tierra de oja',
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          SizedBox(
+                            width: 25,
+                          ),
+                          IconAndText(
+                            icon: Icons.dashboard,
+                            iconColor: AppColors.mainColor,
+                            text: '24 m2',
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
