@@ -41,6 +41,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
     //print(Dimensions.screenWidth);
     return Column(
       children: [
+        //Slider section
         SizedBox(
           //color: Colors.red,
           height: Dimensions.pageView,
@@ -51,6 +52,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+        //Dots section
         DotsIndicator(
           dotsCount: 5,
           position: _currentPageValue,
@@ -61,6 +63,64 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(Dimensions.radius5)),
+          ),
+        ),
+        //Popular text
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width20),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: 'Populares'),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(
+                  text: '.',
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                  margin: const EdgeInsets.only(bottom: 1),
+                  child: SmallText(text: 'Farms pairing')),
+            ],
+          ),
+        ),
+        //List of farms
+        Container(
+          height: 700,
+          child: ListView.builder(
+            physics: const AlwaysScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width20, right: Dimensions.width20),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius30),
+                          color: Colors.white38,
+                          image: const DecorationImage(
+                              image: AssetImage('assets/images/huerto9.png'))),
+                    )
+                  ],
+                ),
+              );
+            },
+            itemCount: 10,
           ),
         )
       ],
@@ -108,35 +168,32 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                   image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage('assets/images/huerto1.png')))),
-          GestureDetector(
-            onTap: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(
-                      vertical: Dimensions.height15,
-                      horizontal: Dimensions.width20),
-                  child: const IconAndText(
-                    icon: Icons.location_on,
-                    iconColor: AppColors.yellowColor,
-                    text: '2.4 km',
-                    color: Colors.white,
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(
+                    vertical: Dimensions.height15,
+                    horizontal: Dimensions.width20),
+                child: const IconAndText(
+                  icon: Icons.location_on,
+                  iconColor: AppColors.yellowColor,
+                  text: '2.4 km',
+                  color: Colors.white,
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(
-                      vertical: Dimensions.height15,
-                      horizontal: Dimensions.width20),
-                  child: const IconAndText(
-                    icon: Icons.favorite_outlined,
-                    iconColor: Colors.white,
-                    text: '',
-                    color: Colors.white,
-                  ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(
+                    vertical: Dimensions.height15,
+                    horizontal: Dimensions.width20),
+                child: const IconAndText(
+                  icon: Icons.favorite_outlined,
+                  iconColor: Colors.white,
+                  text: '',
+                  color: Colors.white,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Align(
             alignment: Alignment.bottomCenter,

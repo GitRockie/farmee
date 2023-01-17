@@ -65,7 +65,10 @@ class MainFarmsPage extends StatelessWidget {
           ),
         ),
         //Showing the body
-        const FarmsPageBody(),
+        const Expanded(
+            child: SingleChildScrollView(
+          child: FarmsPageBody(),
+        ))
       ],
     ));
   }

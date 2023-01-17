@@ -17,12 +17,12 @@ class Dimensions {
   static double height45 = screenHeight / 14.93;
 
   //dynamic width padding, margin: right, left
-  static double width5 = screenWidth / 72;
-  static double width10 = screenWidth / 36;
-  static double width15 = screenWidth / 24;
-  static double width20 = screenWidth / 18;
-  static double width30 = screenWidth / 12;
-  static double width45 = screenWidth / 8;
+  static double width5 = screenHeight / 134.4;
+  static double width10 = screenHeight / 67.2;
+  static double width15 = screenHeight / 44.8;
+  static double width20 = screenHeight / 33.6;
+  static double width30 = screenHeight / 22.4;
+  static double width45 = screenHeight / 14.93;
 
   static double font18 = screenHeight / 37.3;
 
