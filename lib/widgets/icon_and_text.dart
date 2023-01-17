@@ -1,3 +1,4 @@
+import 'package:farmee_app/utils/dimensions.dart';
 import 'package:farmee_app/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 
@@ -20,9 +21,10 @@ class IconAndText extends StatelessWidget {
         Icon(
           icon,
           color: iconColor,
+          size: Dimensions.iconSize24,
         ),
-        const SizedBox(
-          width: 5,
+        SizedBox(
+          width: Dimensions.width5,
         ),
         SmallText(
           text: text,

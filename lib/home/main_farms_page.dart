@@ -1,5 +1,6 @@
 import 'package:farmee_app/home/farms_page_body.dart';
 import 'package:farmee_app/utils/colors.dart';
+import 'package:farmee_app/utils/dimensions.dart';
 import 'package:farmee_app/widgets/big_text.dart';
 import 'package:farmee_app/widgets/small_text.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +17,10 @@ class MainFarmsPage extends StatelessWidget {
         Container(
           //Scrolling parameter goes here
           child: Container(
-            margin: const EdgeInsets.only(top: 45, bottom: 15),
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            margin: EdgeInsets.only(
+                top: Dimensions.height45, bottom: Dimensions.height15),
+            padding: EdgeInsets.only(
+                left: Dimensions.width20, right: Dimensions.width20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -29,9 +32,13 @@ class MainFarmsPage extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        SmallText(
-                          text: 'Mataró',
-                          color: Colors.black54,
+                        Container(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width5, right: 0),
+                          child: SmallText(
+                            text: 'Mataró',
+                            color: Colors.black54,
+                          ),
                         ),
                         const Icon(Icons.arrow_drop_down_rounded)
                       ],
@@ -40,14 +47,16 @@ class MainFarmsPage extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    width: 45,
-                    height: 45,
+                    width: Dimensions.height45,
+                    height: Dimensions.height45,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius15),
                         color: AppColors.mainColor),
-                    child: const Icon(
+                    child: Icon(
                       Icons.search,
                       color: Colors.white,
+                      size: Dimensions.iconSize24,
                     ),
                   ),
                 )

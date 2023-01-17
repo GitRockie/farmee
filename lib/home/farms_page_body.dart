@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:farmee_app/utils/colors.dart';
+import 'package:farmee_app/utils/dimensions.dart';
 import 'package:farmee_app/widgets/big_text.dart';
 import 'package:farmee_app/widgets/icon_and_text.dart';
 import 'package:farmee_app/widgets/small_text.dart';
@@ -15,8 +16,8 @@ class FarmsPageBody extends StatefulWidget {
 class _FarmsPageBodyState extends State<FarmsPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currentPageValue = 0.0;
-  double _scaleFactor = 0.8;
-  double _height = 220;
+  final double _scaleFactor = 0.8;
+  final double _height = Dimensions.pageViewContainer;
   //Overriding init state method
   @override
   void initState() {
@@ -30,16 +31,19 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
 
   @override
   void dispose() {
+    super.dispose();
     pageController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    //print(Dimensions.screenHeight);
+    //print(Dimensions.screenWidth);
     return Column(
       children: [
         SizedBox(
           //color: Colors.red,
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -56,7 +60,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
             size: const Size.square(9.0),
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0)),
+                borderRadius: BorderRadius.circular(Dimensions.radius5)),
           ),
         )
       ],
@@ -93,10 +97,11 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
       child: Stack(
         children: [
           Container(
-              height: 220,
-              margin: const EdgeInsets.only(left: 10, right: 10),
+              height: Dimensions.pageViewContainer,
+              margin: EdgeInsets.only(
+                  left: Dimensions.width10, right: Dimensions.width10),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(Dimensions.radius30),
                   color: index.isEven
                       ? const Color(0xFF69c5df)
                       : const Color(0xFF9294cc),
@@ -109,8 +114,9 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                  margin: EdgeInsets.symmetric(
+                      vertical: Dimensions.height15,
+                      horizontal: Dimensions.width20),
                   child: const IconAndText(
                     icon: Icons.location_on,
                     iconColor: AppColors.yellowColor,
@@ -119,8 +125,9 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                   ),
                 ),
                 Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                  margin: EdgeInsets.symmetric(
+                      vertical: Dimensions.height15,
+                      horizontal: Dimensions.width20),
                   child: const IconAndText(
                     icon: Icons.favorite_outlined,
                     iconColor: Colors.white,
@@ -134,10 +141,13 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
-              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              height: Dimensions.pageViewTextContainer,
+              margin: EdgeInsets.only(
+                  left: Dimensions.width30,
+                  right: Dimensions.width30,
+                  bottom: Dimensions.height30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
                   color: Colors.white,
                   boxShadow: const [
                     BoxShadow(
@@ -148,81 +158,65 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                     BoxShadow(color: Colors.white, offset: Offset(5, 0)),
                   ]),
               child: Container(
-                padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15,
+                    left: Dimensions.width15,
+                    right: Dimensions.width15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          BigText(
-                            text: 'Yasaihata Makiko まきこ',
-                            size: 18,
-                          ),
-                        ],
-                      ),
+                    BigText(
+                      text: 'Yasaihata Makiko まきこ',
                     ),
-                    const SizedBox(height: 10),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Wrap(
-                            children: List.generate(
-                                5,
-                                (index) => const Icon(
-                                      Icons.star,
-                                      color: AppColors.mainColor,
-                                      size: 15,
-                                    )),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(
-                            text: '4.8',
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SmallText(
-                            text: '123',
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SmallText(text: 'comentarios')
-                        ],
-                      ),
+                    SizedBox(height: Dimensions.height10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Wrap(
+                          children: List.generate(
+                              5,
+                              (index) => Icon(
+                                    Icons.star,
+                                    color: AppColors.mainColor,
+                                    size: Dimensions.iconSize15,
+                                  )),
+                        ),
+                        SizedBox(
+                          width: Dimensions.width10,
+                        ),
+                        SmallText(
+                          text: '4.8',
+                        ),
+                        SizedBox(
+                          width: Dimensions.width5,
+                        ),
+                        SmallText(
+                          text: '123',
+                        ),
+                        SizedBox(
+                          width: Dimensions.width5,
+                        ),
+                        SmallText(text: 'comentarios')
+                      ],
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: Dimensions.height20,
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: const [
-                          IconAndText(
-                            icon: Icons.compost,
-                            iconColor: AppColors.iconColor2,
-                            text: 'Tierra de oja',
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          SizedBox(
-                            width: 25,
-                          ),
-                          IconAndText(
-                            icon: Icons.dashboard,
-                            iconColor: AppColors.mainColor,
-                            text: '24 m2',
-                          ),
-                        ],
-                      ),
-                    )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        IconAndText(
+                          icon: Icons.compost,
+                          iconColor: AppColors.iconColor2,
+                          text: 'Tierra orgánica',
+                        ),
+                        IconAndText(
+                          icon: Icons.dashboard,
+                          iconColor: AppColors.mainColor,
+                          text: '24 m2',
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
