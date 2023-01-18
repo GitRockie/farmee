@@ -90,38 +90,87 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
               ),
               Container(
                   margin: const EdgeInsets.only(bottom: 1),
-                  child: SmallText(text: 'Farms pairing')),
+                  child: SmallText(text: 'Mejores huertos')),
             ],
           ),
         ),
         //List of farms
-        Container(
-          height: 700,
-          child: ListView.builder(
-            physics: const AlwaysScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(
-                    left: Dimensions.width20, right: Dimensions.width20),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 120,
-                      height: 120,
+        ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                  left: Dimensions.width20,
+                  right: Dimensions.width20,
+                  bottom: Dimensions.height15),
+              child: Row(
+                children: [
+                  //Images in the Row
+                  Container(
+                    width: Dimensions.listViewImgSize,
+                    height: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        color: Colors.white38,
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/huerto9.png'))),
+                  ),
+                  //Text in the Row
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContSize,
                       decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.radius30),
-                          color: Colors.white38,
-                          image: const DecorationImage(
-                              image: AssetImage('assets/images/huerto9.png'))),
-                    )
-                  ],
-                ),
-              );
-            },
-            itemCount: 10,
-          ),
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.radius20),
+                              bottomRight:
+                                  Radius.circular(Dimensions.radius20)),
+                          color: Colors.white),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: Dimensions.width10,
+                            right: Dimensions.width10),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              BigText(text: 'Jardín poético de Chéjov'),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SmallText(
+                                  text:
+                                      'Invernadero capilla. Cultivo bajo cubierta.'),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  IconAndText(
+                                    icon: Icons.compost,
+                                    text: 'Tierra negra',
+                                    iconColor: AppColors.iconColor2,
+                                  ),
+                                  IconAndText(
+                                    icon: Icons.dashboard,
+                                    iconColor: AppColors.mainColor,
+                                    text: '14 m2',
+                                  ),
+                                ],
+                              )
+                            ]),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+          itemCount: 10,
         )
       ],
     );
