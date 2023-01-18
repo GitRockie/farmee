@@ -1,6 +1,12 @@
 import 'package:farmee_app/utils/dimensions.dart';
+import 'package:farmee_app/widgets/app_column.dart';
 import 'package:farmee_app/widgets/app_icon.dart';
 import 'package:flutter/material.dart';
+
+import '../../utils/colors.dart';
+import '../../widgets/big_text.dart';
+import '../../widgets/icon_and_text.dart';
+import '../../widgets/small_text.dart';
 
 class PopularFarmDetail extends StatelessWidget {
   const PopularFarmDetail({super.key});
@@ -32,6 +38,22 @@ class PopularFarmDetail extends StatelessWidget {
                 AppIcon(icon: Icons.shopping_basket),
               ]),
         ),
+        Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            top: Dimensions.popularFarmImgSize - 40,
+            child: Container(
+                padding: EdgeInsets.only(
+                    left: Dimensions.width20,
+                    right: Dimensions.width20,
+                    top: Dimensions.height20),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(Dimensions.radius20),
+                        topRight: Radius.circular(Dimensions.radius20))),
+                child: const AppColumn())),
       ],
     ));
   }

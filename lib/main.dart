@@ -1,4 +1,5 @@
 import 'package:farmee_app/pages/farm/popular_farm_detail.dart';
+import 'package:farmee_app/pages/home/main_farms_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PopularFarmDetail(),
+      home: //const MainFarmsPage()
+          const PopularFarmDetail(),
     );
   }
 }

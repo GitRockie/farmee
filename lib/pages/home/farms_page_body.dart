@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:farmee_app/utils/colors.dart';
 import 'package:farmee_app/utils/dimensions.dart';
+import 'package:farmee_app/widgets/app_column.dart';
 import 'package:farmee_app/widgets/big_text.dart';
 import 'package:farmee_app/widgets/icon_and_text.dart';
 import 'package:farmee_app/widgets/small_text.dart';
@@ -95,20 +96,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
           ),
         ),
         //List of farms
-        /*ListWheelScrollView(itemExtent: 50, children: [
-          Container(
-            color: AppColors.mainColor,
-            child: const Center(child: Text('Hello there')),
-          ),
-          Container(
-            color: AppColors.mainColor,
-            child: const Center(child: Text('Hello there')),
-          ),
-          Container(
-            color: AppColors.mainColor,
-            child: const Center(child: Text('Hello there')),
-          ),
-        ]),*/
+
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
@@ -278,68 +266,11 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                     BoxShadow(color: Colors.white, offset: Offset(5, 0)),
                   ]),
               child: Container(
-                padding: EdgeInsets.only(
-                    top: Dimensions.height15,
-                    left: Dimensions.width15,
-                    right: Dimensions.width15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BigText(
-                      text: 'Yasaihata Makiko まきこ',
-                    ),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(
-                                    Icons.star,
-                                    color: AppColors.mainColor,
-                                    size: Dimensions.iconSize15,
-                                  )),
-                        ),
-                        SizedBox(
-                          width: Dimensions.width10,
-                        ),
-                        const SmallText(
-                          text: '4.8',
-                        ),
-                        SizedBox(
-                          width: Dimensions.width5,
-                        ),
-                        const SmallText(
-                          text: '123',
-                        ),
-                        SizedBox(
-                          width: Dimensions.width5,
-                        ),
-                        const SmallText(text: 'comentarios')
-                      ],
-                    ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        IconAndText(
-                          icon: Icons.compost,
-                          iconColor: AppColors.iconColor2,
-                          text: 'Tierra orgánica',
-                        ),
-                        IconAndText(
-                          icon: Icons.dashboard,
-                          iconColor: AppColors.mainColor,
-                          text: '24 m2',
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.only(
+                      top: Dimensions.height15,
+                      left: Dimensions.width15,
+                      right: Dimensions.width15),
+                  child: const AppColumn()),
             ),
           )
         ],
