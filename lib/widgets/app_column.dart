@@ -7,15 +7,17 @@ import '../utils/colors.dart';
 import '../utils/dimensions.dart';
 
 class AppColumn extends StatelessWidget {
-  const AppColumn({super.key});
+  final String text;
+  const AppColumn({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const BigText(
-          text: 'Huerto de Makiko まきこ',
+        BigText(
+          text: text,
+          size: Dimensions.font22,
         ),
         SizedBox(height: Dimensions.height10),
         Row(

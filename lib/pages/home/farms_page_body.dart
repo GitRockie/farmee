@@ -270,7 +270,9 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                       top: Dimensions.height15,
                       left: Dimensions.width15,
                       right: Dimensions.width15),
-                  child: const AppColumn()),
+                  child: const AppColumn(
+                    text: 'Huerto de Makiko まきこ',
+                  )),
             ),
           )
         ],

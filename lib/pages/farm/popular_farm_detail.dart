@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/big_text.dart';
-import '../../widgets/icon_and_text.dart';
-import '../../widgets/small_text.dart';
 
 class PopularFarmDetail extends StatelessWidget {
   const PopularFarmDetail({super.key});
@@ -14,48 +12,83 @@ class PopularFarmDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        Positioned(
-            left: 0,
-            right: 0,
-            child: Container(
-              width: double.maxFinite,
-              height: Dimensions.popularFarmImgSize,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/huerto3.png'))),
-            )),
-        Positioned(
-          top: Dimensions.height45,
-          left: Dimensions.width20,
-          right: Dimensions.width20,
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          Positioned(
+              left: 0,
+              right: 0,
+              child: Container(
+                width: double.maxFinite,
+                height: Dimensions.popularFarmImgSize,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/huerto3.png'))),
+              )),
+          Positioned(
+            top: Dimensions.height45,
+            left: Dimensions.width20,
+            right: Dimensions.width20,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  AppIcon(icon: Icons.arrow_back_ios_new),
+                  AppIcon(icon: Icons.shopping_basket),
+                ]),
+          ),
+          Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              top: Dimensions.popularFarmImgSize - 40,
+              child: Container(
+                  padding: EdgeInsets.only(
+                      left: Dimensions.width20,
+                      right: Dimensions.width20,
+                      top: Dimensions.height20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(Dimensions.radius20),
+                          topRight: Radius.circular(Dimensions.radius20))),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const AppColumn(
+                        text: 'Huerto de Makiko まきこ',
+                      ),
+                      SizedBox(
+                        height: Dimensions.height20,
+                      ),
+                      const BigText(text: 'Descripcción')
+                    ],
+                  ))),
+        ],
+      ),
+      bottomNavigationBar: Container(
+          height: 120,
+          padding: EdgeInsets.only(
+              top: Dimensions.height30,
+              bottom: Dimensions.height30,
+              left: Dimensions.width20,
+              right: Dimensions.width20),
+          decoration: BoxDecoration(
+            color: AppColors.buttonBackgroundColor,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.radius20 * 2),
+                topRight: Radius.circular(Dimensions.radius20 * 2)),
+          ),
           child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                AppIcon(icon: Icons.arrow_back_ios_new),
-                AppIcon(icon: Icons.shopping_basket),
-              ]),
-        ),
-        Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
-            top: Dimensions.popularFarmImgSize - 40,
-            child: Container(
-                padding: EdgeInsets.only(
-                    left: Dimensions.width20,
-                    right: Dimensions.width20,
-                    top: Dimensions.height20),
+            children: [
+              Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(Dimensions.radius20),
-                        topRight: Radius.circular(Dimensions.radius20))),
-                child: const AppColumn())),
-      ],
-    ));
+                    borderRadius: BorderRadius.circular(Dimensions.radius20),
+                    color: Colors.white),
+              )
+            ],
+          )),
+    );
   }
 }
 
