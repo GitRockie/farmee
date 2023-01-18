@@ -1,5 +1,4 @@
 import 'package:farmee_app/pages/farm/popular_farm_detail.dart';
-import 'package:farmee_app/pages/home/main_farms_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

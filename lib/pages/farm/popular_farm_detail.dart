@@ -1,6 +1,7 @@
 import 'package:farmee_app/utils/dimensions.dart';
 import 'package:farmee_app/widgets/app_column.dart';
 import 'package:farmee_app/widgets/app_icon.dart';
+import 'package:farmee_app/widgets/expandable_text.dart';
 import 'package:farmee_app/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class PopularFarmDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          //background image
           Positioned(
               left: 0,
               right: 0,
@@ -27,6 +29,7 @@ class PopularFarmDetail extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/huerto3.png'))),
               )),
+          //icons widget
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -38,6 +41,7 @@ class PopularFarmDetail extends StatelessWidget {
                   AppIcon(icon: Icons.shopping_basket),
                 ]),
           ),
+          //inroduction of farm
           Positioned(
               left: 0,
               right: 0,
@@ -62,7 +66,12 @@ class PopularFarmDetail extends StatelessWidget {
                       SizedBox(
                         height: Dimensions.height20,
                       ),
-                      const BigText(text: 'Descripcción')
+                      const BigText(text: 'Descripcción'),
+                      //Expandable Text Widget
+                      const ExpandableText(
+                        text:
+                            'Coriander sesame soba noodles mangos tomato and basil cherry bomb lemon tahini dressing elderberry zesty tofu pad thai grenadillo veggie burgers heat. Almond milk alfalfa sprouts cayenne cool cucumbers shaved almonds lemon lime minty thyme blood orange smash  mushrooms miso turmeric glazed aubergine bite sized pesto creamy cauliflower alfredo.',
+                      )
                     ],
                   ))),
         ],
