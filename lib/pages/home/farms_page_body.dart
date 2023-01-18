@@ -74,13 +74,13 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(text: 'Populares'),
+              const BigText(text: 'Populares'),
               SizedBox(
                 width: Dimensions.width10,
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 3),
-                child: BigText(
+                child: const BigText(
                   text: '.',
                   color: Colors.black26,
                 ),
@@ -90,11 +90,25 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
               ),
               Container(
                   margin: const EdgeInsets.only(bottom: 1),
-                  child: SmallText(text: 'Mejores huertos')),
+                  child: const SmallText(text: 'Mejores huertos')),
             ],
           ),
         ),
         //List of farms
+        /*ListWheelScrollView(itemExtent: 50, children: [
+          Container(
+            color: AppColors.mainColor,
+            child: const Center(child: Text('Hello there')),
+          ),
+          Container(
+            color: AppColors.mainColor,
+            child: const Center(child: Text('Hello there')),
+          ),
+          Container(
+            color: AppColors.mainColor,
+            child: const Center(child: Text('Hello there')),
+          ),
+        ]),*/
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
@@ -136,11 +150,11 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              BigText(text: 'Jardín poético de Chéjov'),
+                              const BigText(text: 'Jardín poético de Chéjov'),
                               SizedBox(
                                 height: Dimensions.height10,
                               ),
-                              SmallText(
+                              const SmallText(
                                   text:
                                       'Invernadero capilla. Cultivo bajo cubierta.'),
                               SizedBox(
@@ -271,7 +285,7 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(
+                    const BigText(
                       text: 'Yasaihata Makiko まきこ',
                     ),
                     SizedBox(height: Dimensions.height10),
@@ -290,19 +304,19 @@ class _FarmsPageBodyState extends State<FarmsPageBody> {
                         SizedBox(
                           width: Dimensions.width10,
                         ),
-                        SmallText(
+                        const SmallText(
                           text: '4.8',
                         ),
                         SizedBox(
                           width: Dimensions.width5,
                         ),
-                        SmallText(
+                        const SmallText(
                           text: '123',
                         ),
                         SizedBox(
                           width: Dimensions.width5,
                         ),
-                        SmallText(text: 'comentarios')
+                        const SmallText(text: 'comentarios')
                       ],
                     ),
                     SizedBox(

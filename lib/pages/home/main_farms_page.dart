@@ -1,4 +1,4 @@
-import 'package:farmee_app/home/farms_page_body.dart';
+import 'package:farmee_app/pages/home/farms_page_body.dart';
 import 'package:farmee_app/utils/colors.dart';
 import 'package:farmee_app/utils/dimensions.dart';
 import 'package:farmee_app/widgets/big_text.dart';
@@ -26,7 +26,7 @@ class MainFarmsPage extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    BigText(
+                    const BigText(
                       text: 'Spain',
                       color: AppColors.mainColor,
                     ),
@@ -35,7 +35,7 @@ class MainFarmsPage extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.only(
                               left: Dimensions.width5, right: 0),
-                          child: SmallText(
+                          child: const SmallText(
                             text: 'Mataró',
                             color: Colors.black54,
                           ),
