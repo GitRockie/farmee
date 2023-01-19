@@ -1,4 +1,6 @@
-import 'package:farmee_app/home/main_farms_page.dart';
+import 'package:farmee_app/pages/farm/popular_farm_detail.dart';
+import 'package:farmee_app/pages/farm/recommended_harvest_detail.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,12 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MainFarmsPage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const ReccommendedHarvest()
+        //const MainFarmsPage()
+        //const PopularFarmDetail(),
+        );
   }
 }

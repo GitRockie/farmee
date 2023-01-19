@@ -1,0 +1,209 @@
+import 'package:farmee_app/utils/dimensions.dart';
+import 'package:farmee_app/widgets/app_column.dart';
+import 'package:farmee_app/widgets/app_icon.dart';
+import 'package:farmee_app/widgets/expandable_text.dart';
+import 'package:farmee_app/widgets/small_text.dart';
+import 'package:flutter/material.dart';
+
+import '../../utils/colors.dart';
+import '../../widgets/big_text.dart';
+
+class PopularFarmDetail extends StatelessWidget {
+  const PopularFarmDetail({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          //background image
+          Positioned(
+              left: 0,
+              right: 0,
+              child: Container(
+                width: double.maxFinite,
+                height: Dimensions.popularFarmImgSize,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/huerto3.png'))),
+              )),
+          //icons widget
+
+          Positioned(
+            top: Dimensions.height45,
+            left: Dimensions.width20,
+            right: Dimensions.width20,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  AppIcon(icon: Icons.arrow_back_ios_new),
+                  AppIcon(icon: Icons.shopping_basket),
+                ]),
+          ),
+
+          //inroduction of farm
+          Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              top: Dimensions.popularFarmImgSize - 90,
+              child: Container(
+                  padding: EdgeInsets.only(
+                      left: Dimensions.width20,
+                      right: Dimensions.width20,
+                      top: Dimensions.height20),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(Dimensions.radius20),
+                          topRight: Radius.circular(Dimensions.radius20))),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const AppColumn(
+                        text: 'Huerto de Makiko まきこ',
+                      ),
+                      SizedBox(
+                        height: Dimensions.height5,
+                      ),
+                      const BigText(text: 'Descripcción'),
+                      //Expandable Text Widget
+                      SizedBox(
+                        height: Dimensions.height10,
+                      ),
+                      const Expanded(
+                        child: SingleChildScrollView(
+                          child: ExpandableText(
+                            text:
+                                'Jalapeño with butternut mix Thai cauliflower burritos ginger tofu mediterranean luxury bowl Southern Italian chocolate peanut butter dip plums falafel bites lentils appetizer paprika black bean wraps delightful blueberry scones couscous tabasco pepper açai mediterranean vegetables bruschetta tofu maple orange tempeh. Cinnamon toast Mexican fiesta cozy butternut dill ginger carrot spiced juice blueberry pops earl grey latte red amazon pepper apricot salty eating together lemonade zest rich coconut cream spicy.',
+                          ),
+                        ),
+                      )
+                    ],
+                  ))),
+        ],
+      ),
+      bottomNavigationBar: Container(
+          height: Dimensions.bottomHeightBar,
+          padding: EdgeInsets.only(
+              top: Dimensions.height30,
+              bottom: Dimensions.height30,
+              left: Dimensions.width20,
+              right: Dimensions.width20),
+          decoration: BoxDecoration(
+            color: AppColors.buttonBackgroundColor,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(Dimensions.radius20 * 2),
+                topRight: Radius.circular(Dimensions.radius20 * 2)),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                    top: Dimensions.height20,
+                    bottom: Dimensions.height20,
+                    left: Dimensions.width20,
+                    right: Dimensions.width20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Dimensions.radius20),
+                    color: Colors.white),
+                child: Row(children: [
+                  const Icon(
+                    Icons.remove,
+                    color: AppColors.signColor,
+                  ),
+                  SizedBox(width: Dimensions.width10 / 2),
+                  const BigText(text: '0'),
+                  SizedBox(width: Dimensions.width10 / 2),
+                  const Icon(
+                    Icons.add,
+                    color: AppColors.signColor,
+                  ),
+                ]),
+              ),
+              Container(
+                padding: EdgeInsets.only(
+                    top: Dimensions.height20,
+                    bottom: Dimensions.height20,
+                    left: Dimensions.width20,
+                    right: Dimensions.width20),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(Dimensions.radius20),
+                    color: AppColors.mainColor),
+                child: const SmallText(
+                  text: '10 EUR | Añadir al carrito',
+                  color: Colors.white,
+                ),
+              )
+            ],
+          )),
+    );
+  }
+}
+
+
+
+/*Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+          margin: EdgeInsets.only(
+              right: Dimensions.width10, left: Dimensions.width10),
+          child: Center(
+              child: ListWheelScrollView(
+                  perspective: 0.004,
+                  diameterRatio: 2.5,
+                  itemExtent: Dimensions.height45,
+                  children: [
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+                Container(
+                  color: AppColors.mainColor,
+                  child: const Center(child: Text('Hello there')),
+                ),
+              ]))),
+    )*/
