@@ -30,6 +30,7 @@ class PopularFarmDetail extends StatelessWidget {
                         image: AssetImage('assets/images/huerto3.png'))),
               )),
           //icons widget
+
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -41,12 +42,13 @@ class PopularFarmDetail extends StatelessWidget {
                   AppIcon(icon: Icons.shopping_basket),
                 ]),
           ),
+
           //inroduction of farm
           Positioned(
               left: 0,
               right: 0,
               bottom: 0,
-              top: Dimensions.popularFarmImgSize - 40,
+              top: Dimensions.popularFarmImgSize - 90,
               child: Container(
                   padding: EdgeInsets.only(
                       left: Dimensions.width20,
@@ -64,13 +66,20 @@ class PopularFarmDetail extends StatelessWidget {
                         text: 'Huerto de Makiko まきこ',
                       ),
                       SizedBox(
-                        height: Dimensions.height20,
+                        height: Dimensions.height5,
                       ),
                       const BigText(text: 'Descripcción'),
                       //Expandable Text Widget
-                      const ExpandableText(
-                        text:
-                            'Coriander sesame soba noodles mangos tomato and basil cherry bomb lemon tahini dressing elderberry zesty tofu pad thai grenadillo veggie burgers heat. Almond milk alfalfa sprouts cayenne cool cucumbers shaved almonds lemon lime minty thyme blood orange smash  mushrooms miso turmeric glazed aubergine bite sized pesto creamy cauliflower alfredo.',
+                      SizedBox(
+                        height: Dimensions.height10,
+                      ),
+                      const Expanded(
+                        child: SingleChildScrollView(
+                          child: ExpandableText(
+                            text:
+                                'Jalapeño with butternut mix Thai cauliflower burritos ginger tofu mediterranean luxury bowl Southern Italian chocolate peanut butter dip plums falafel bites lentils appetizer paprika black bean wraps delightful blueberry scones couscous tabasco pepper açai mediterranean vegetables bruschetta tofu maple orange tempeh. Cinnamon toast Mexican fiesta cozy butternut dill ginger carrot spiced juice blueberry pops earl grey latte red amazon pepper apricot salty eating together lemonade zest rich coconut cream spicy.',
+                          ),
+                        ),
                       )
                     ],
                   ))),
