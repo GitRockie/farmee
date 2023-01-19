@@ -27,6 +27,7 @@ class Dimensions {
   //font size
   static double font13 = screenHeight / 51.69;
   static double font14 = screenHeight / 48;
+  static double font16 = screenHeight / 42;
   static double font18 = screenHeight / 37.3;
   static double font20 = screenHeight / 33.6;
   static double font22 = screenHeight / 30.54;
@@ -41,6 +42,8 @@ class Dimensions {
   //icon size
   static double iconSize15 = screenHeight / 44.8;
   static double iconSize16 = screenHeight / 42;
+  static double iconSize20 = screenHeight / 33.6;
+  static double iconSize22 = screenHeight / 30.54;
   static double iconSize24 = screenHeight / 28;
   static double iconSize45 = screenHeight / 14.93;
 

@@ -4,14 +4,17 @@ import 'package:flutter/material.dart';
 class AppIcon extends StatelessWidget {
   final IconData icon;
   final double size;
+  final double? iconSize;
   final Color? backgroundColor;
   final Color? iconColor;
+
   const AppIcon(
       {super.key,
       this.backgroundColor = const Color(0xFFfcf4e4),
       this.size = 40,
       this.iconColor = const Color(0xFF756d54),
-      required this.icon});
+      required this.icon,
+      this.iconSize = 16});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +28,7 @@ class AppIcon extends StatelessWidget {
       child: Icon(
         icon,
         color: iconColor,
-        size: Dimensions.iconSize16,
+        size: iconSize,
       ),
     );
   }
