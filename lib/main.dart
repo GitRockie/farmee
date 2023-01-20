@@ -3,8 +3,12 @@ import 'package:farmee_app/pages/farm/recommended_harvest_detail.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'helper/dependencies.dart' as dep;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  //Loading dependencies here
+  await dep.init();
   runApp(const MyApp());
 }
 

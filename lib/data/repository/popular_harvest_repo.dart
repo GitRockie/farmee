@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class PopularHarvestRepo extends GetxService {
   final ApiClient apiClient;
-  PopularHarvestRepo(this.apiClient);
+  PopularHarvestRepo({required this.apiClient});
 
   Future<Response> getPopularHarvestList() async {
     return await apiClient.getData('endpoint url');
