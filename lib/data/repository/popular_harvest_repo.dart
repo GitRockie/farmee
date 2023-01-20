@@ -6,6 +6,6 @@ class PopularHarvestRepo extends GetxService {
   PopularHarvestRepo({required this.apiClient});
 
   Future<Response> getPopularHarvestList() async {
-    return await apiClient.getData('endpoint url');
+    return await apiClient.getData("endpoint is pending here ");
   }
 }
