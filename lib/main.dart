@@ -1,3 +1,4 @@
+import 'package:farmee_app/controllers/popular_harvest_controller.dart';
 import 'package:farmee_app/pages/farm/popular_farm_detail.dart';
 import 'package:farmee_app/pages/farm/recommended_harvest_detail.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Get.find<PopularHarvestController>().getPopularHarvestList;
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',

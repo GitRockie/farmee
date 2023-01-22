@@ -1,4 +1,5 @@
 import 'package:farmee_app/data/repository/popular_harvest_repo.dart';
+import 'package:farmee_app/models/harvest_model.dart';
 import 'package:get/get.dart';
 
 class PopularHarvestController extends GetxController {
@@ -11,8 +12,10 @@ class PopularHarvestController extends GetxController {
   Future<void> getPopularHarvestList() async {
     Response response = await popularHarvestRepo.getPopularHarvestList();
     if (response.statusCode == 200) {
+      print('controller moves me');
       _popularHarvestList = [];
-      //_popularHarvestList.addAll();
+      _popularHarvestList.addAll(Harvest.fromJson(response.body).products);
+      print(_popularHarvestList);
       update();
     } else {}
   }

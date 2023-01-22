@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 Future<void> init() async {
   //Api Client
   Get.lazyPut(() => ApiClient(
-        appBaseUrl: '',
+        appBaseUrl: "https://mvs.bslmeiyu.com",
       ));
   //Repositories
   Get.lazyPut(() => PopularHarvestRepo(apiClient: Get.find()));
